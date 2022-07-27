@@ -7,6 +7,7 @@ class Admin(AbstractUserRole):
         'add_user': True,
         'update_user': True,
         'delete_user': True,
+        'view_role': True,
     }
 
 
