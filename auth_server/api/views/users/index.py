@@ -14,7 +14,7 @@ class RegistrationView(APIView):
             serializer = RegistrationSerializer(data=request.data)
             if serializer.is_valid():
                 account = serializer.save()
-                refresh = RefreshToken.for_user(account.user)
+                refresh = RefreshToken.for_user(account)
                 data = {
                     'refresh': str(refresh),
                     'access': str(refresh.access_token),
@@ -23,4 +23,4 @@ class RegistrationView(APIView):
                 return Response(data, status=status.HTTP_201_CREATED)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
-            return Response({'Error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'Error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

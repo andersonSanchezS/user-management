@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'auth_server',
-
+    'rolepermissions'
 ]
 
 MIDDLEWARE = [
@@ -134,3 +134,5 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': True,
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=730)
 }
+
+ROLEPERMISSIONS_MODULE = 'Base.roles'
