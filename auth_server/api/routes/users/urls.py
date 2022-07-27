@@ -1,9 +1,7 @@
-from django.urls import path, include
-from auth_server.api.views.users.index import RegistrationView
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from django.urls import path
+from auth_server.api.views.users.index import deleteUser, updateUser
 
 urlpatterns = [
-    path('register/', RegistrationView.as_view(), name='register'),
-    path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('delete/<int:pk>', deleteUser, name='delete-user'),
+    path('update/<int:pk>', updateUser, name='update-user')
 ]
