@@ -39,7 +39,7 @@ def addRole(request, pk):
 
 
 @api_view(['DELETE'])
-def deleteRole(request, pk):
+def removeRole(request, pk):
     try:
         role = request.data['role']
         user = User.objects.get(pk=pk)

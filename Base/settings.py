@@ -136,3 +136,6 @@ SIMPLE_JWT = {
 }
 
 ROLEPERMISSIONS_MODULE = 'Base.roles'
+
+
+
